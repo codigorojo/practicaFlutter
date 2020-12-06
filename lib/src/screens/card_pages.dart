@@ -10,9 +10,9 @@ class CardPage extends StatelessWidget {
         body: ListView(
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             children: <Widget>[
-              _cardTipe1(),
-              SizedBox(height: 10.0),
               _cardTipe2(),
+              SizedBox(height: 10.0),
+              _cardTipe1(),
             ]));
   }
 
@@ -40,9 +40,13 @@ class CardPage extends StatelessWidget {
     return Card(
       child: Column(children: <Widget>[
         FadeInImage(
-            placeholder: AssetImage('assets/myloading.gif'),
-            image: NetworkImage(
-                'https://i.ytimg.com/vi/uy0MaXE1N3c/maxresdefault.jpg')),
+          placeholder: AssetImage('assets/myloading.gif'),
+          image: NetworkImage(
+              'https://i.ytimg.com/vi/uy0MaXE1N3c/maxresdefault.jpg'),
+          fadeInDuration: Duration(milliseconds: 2000),
+          height: 700,
+          fit: BoxFit.cover,
+        ),
         Container(
           padding: EdgeInsets.all(10.0),
           child: Text('La Motta Filocastro'),
