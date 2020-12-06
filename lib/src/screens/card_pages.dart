@@ -8,16 +8,18 @@ class CardPage extends StatelessWidget {
           title: Text('Cards'),
         ),
         body: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
             children: <Widget>[
               _cardTipe2(),
-              SizedBox(height: 10.0),
+              SizedBox(height: 20.0),
               _cardTipe1(),
             ]));
   }
 
   Widget _cardTipe1() {
     return Card(
+      elevation: 10.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
       child: Column(children: <Widget>[
         ListTile(
           leading: Icon(Icons.photo_album),
@@ -38,13 +40,17 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipe2() {
     return Card(
+      elevation: 10.0,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
       child: Column(children: <Widget>[
         FadeInImage(
-          placeholder: AssetImage('assets/myloading.gif'),
+          placeholder: AssetImage('assets/myloading2.gif'),
+          //width: 300.0,
           image: NetworkImage(
               'https://i.ytimg.com/vi/uy0MaXE1N3c/maxresdefault.jpg'),
-          fadeInDuration: Duration(milliseconds: 2000),
-          height: 700,
+          fadeInDuration: Duration(milliseconds: 500),
+          height: 250,
           fit: BoxFit.cover,
         ),
         Container(
