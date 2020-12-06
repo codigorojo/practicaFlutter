@@ -8,11 +8,37 @@ class CardPage extends StatelessWidget {
           title: Text('Cards'),
         ),
         body: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
             children: <Widget>[
               _cardTipe2(),
               SizedBox(height: 20.0),
               _cardTipe1(),
+              SizedBox(height: 20.0),
+              _cardTipe3(),
+              SizedBox(height: 20.0),
+              _cardTipe1(),
+              SizedBox(height: 20.0),
+              _cardTipe3(),
+              SizedBox(height: 20.0),
+              _cardTipe1(),
+              SizedBox(height: 20.0),
+              _cardTipe3(),
+              SizedBox(height: 20.0),
+              _cardTipe1(),
+              SizedBox(height: 20.0),
+              _cardTipe3(),
+              SizedBox(height: 20.0),
+              _cardTipe1(),
+              SizedBox(height: 20.0),
+              _cardTipe3(),
+              SizedBox(height: 20.0),
+              _cardTipe1(),
+              SizedBox(height: 20.0),
+              _cardTipe3(),
+              SizedBox(height: 20.0),
+              _cardTipe1(),
+              SizedBox(height: 20.0),
+              _cardTipe3(),
             ]));
   }
 
@@ -20,21 +46,24 @@ class CardPage extends StatelessWidget {
     return Card(
       elevation: 10.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),
-      child: Column(children: <Widget>[
-        ListTile(
-          leading: Icon(Icons.photo_album),
-          title: Text('Soy el título de la tarjeta'),
-          subtitle: Text(
-              'Aqui vamos a empezar a narrar la verdadera historia de este card, Había una vez...'),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            FlatButton(onPressed: () {}, child: Text('Cancelar')),
-            FlatButton(onPressed: () {}, child: Text('Ok')),
-          ],
-        )
-      ]),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(0, 20.0, 0, 5),
+        child: Column(children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.photo_album),
+            title: Text('Soy el título de la tarjeta'),
+            subtitle: Text(
+                'Aqui vamos a empezar a narrar la verdadera historia de este card, Había una vez...'),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              FlatButton(onPressed: () {}, child: Text('Cancelar')),
+              FlatButton(onPressed: () {}, child: Text('Ok')),
+            ],
+          )
+        ]),
+      ),
     );
   }
 
@@ -54,10 +83,47 @@ class CardPage extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         Container(
-          padding: EdgeInsets.all(10.0),
+          padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
           child: Text('La Motta Filocastro'),
         )
       ]),
+    );
+  }
+
+  Widget _cardTipe3() {
+    final card = Container(
+      /*      elevation: 10.0,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28.0)),*/
+      child: Column(children: <Widget>[
+        FadeInImage(
+          placeholder: AssetImage('assets/myloading2.gif'),
+          //width: 300.0,
+          image: NetworkImage(
+              'https://i.ytimg.com/vi/uy0MaXE1N3c/maxresdefault.jpg'),
+          fadeInDuration: Duration(milliseconds: 500),
+          height: 250,
+          fit: BoxFit.cover,
+        ),
+        Container(
+          padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 15.0),
+          child: Text('La Motta Filocastro'),
+        )
+      ]),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.grey[100],
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 15.0,
+              spreadRadius: 5.0,
+            )
+          ]),
+      child: ClipRRect(borderRadius: BorderRadius.circular(20.0), child: card),
     );
   }
 }
