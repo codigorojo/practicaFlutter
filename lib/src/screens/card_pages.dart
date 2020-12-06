@@ -39,18 +39,13 @@ class CardPage extends StatelessWidget {
   Widget _cardTipe2() {
     return Card(
       child: Column(children: <Widget>[
-        ListTile(
-          leading: Icon(Icons.photo_album),
-          title: Text('Soy el título de la tarjeta'),
-          subtitle: Text(
-              'Aqui vamos a empezar a narrar la verdadera historia de este card, Había una vez...'),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            FlatButton(onPressed: () {}, child: Text('Hola')),
-            FlatButton(onPressed: () {}, child: Text('Ok')),
-          ],
+        FadeInImage(
+            placeholder: AssetImage('assets/myloading.gif'),
+            image: NetworkImage(
+                'https://i.ytimg.com/vi/uy0MaXE1N3c/maxresdefault.jpg')),
+        Container(
+          padding: EdgeInsets.all(10.0),
+          child: Text('La Motta Filocastro'),
         )
       ]),
     );
