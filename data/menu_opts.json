@@ -12,6 +12,11 @@
             "texto": "Avatars"
         },
         {
+            "ruta" : "animatedContainer",
+            "icon" : "donut_large",
+            "texto": "Animated Container"
+        },
+        {
             "ruta" : "card",
             "icon" : "folder_open",
             "texto": "Cards - Tarjetas"
